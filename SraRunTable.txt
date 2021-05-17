@@ -1,0 +1,1 @@
+number	sraName	sampleName	barcode	batch	strainBackground	condition	bedgraph27	SRR1234583	wt_7	CAGATCAT	d	65	wt	x28	SRR1234584	lem2_3	ACTTGAAT	d	65	lem2	x
