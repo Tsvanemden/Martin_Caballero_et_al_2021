@@ -15,7 +15,7 @@ although authors may choose to plot the data using a different software.
 conda env create --name caballero_et_al_2021 --file caballero_et_al_2021.yaml
 ```
 
-*activate the conda environment
+* activate the conda environment
 
 ```
 conda activate caballero_et_al_2021
@@ -49,7 +49,7 @@ snakemake -j 999 --cluster-config cluster.json --cluster "sbatch -p {cluster.par
 ```
 
 
-## Downlaod data from GEO
+## Make the figures
 
 * Run the figures_Caballero_et_al_2021.R script in this directory to produce the figures
 
