@@ -14,6 +14,7 @@ library(extrafont)
 library(ggrepel)
 library(reshape2)
 library(sva)
+library(BSgenome)
 theme_set(theme_pubr())
 theme_update(text=element_text(family="Arial"))
 
@@ -28,13 +29,13 @@ DESeqFunction <- function(samples, contrast, mutant){
   }
   
   # Import the RSEM output
-  files <- file.path("data/RSEM", paste0(samples$sraName, ".genes.results"))
-  names(files) <- samples$sraName
+  files <- file.path("data/RSEM", paste0(samples$sampleName, ".genes.results"))
+  names(files) <- samples$sampleName
   txi.rsem <- tximport(files, type = "rsem", txIn=FALSE)
   
   # prepare colData
   colData <- select(samples, "batch", "condition")
-  row.names(colData) <- samples$sraName
+  row.names(colData) <- samples$sampleName
   
   # one gene somehow has a length of 0 bp, we have to change this to 1 for the analysis to work
   txi.rsem$length[txi.rsem$length == 0] <- 1
